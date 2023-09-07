@@ -180,7 +180,18 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(arrayOfWords, wordToLookFor) {
+  let result = 0;
+  if (arrayOfWords.length > 0) {
+    result = 0;
+    arrayOfWords.forEach((currentElement) => {
+      if (currentElement === wordToLookFor) {
+        result += 1;
+      }
+    });
+  }
+  return result;
+}
 
 
 
