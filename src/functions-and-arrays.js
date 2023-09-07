@@ -54,7 +54,39 @@ function sumNumbers(arrayOfNumbers) {
 
 
 // Iteration #3.1 Bonus:
-function sum() {}
+function sum(arrayOfGeneric) {
+  let sum;
+  if (arrayOfGeneric.length === 0) {
+    sum = 0;
+  }
+  else {
+    sum = 0;
+    arrayOfGeneric.forEach((currentElement) => {
+      console.log(currentElement);
+      const typeOfCurrentElement = typeof currentElement;
+      if (typeof currentElement === "number") {
+        sum += currentElement;
+      }
+      else if (typeof currentElement === "string") {
+        sum += currentElement.length;
+      }
+      else if (typeof currentElement === "boolean") {
+        if(currentElement) {
+          sum += 1;
+        }
+      }
+      else {
+        throw new Error("Error message goes here");
+      }
+    });
+  }
+  return sum;
+}
+
+const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
+
+// should return: 57
+console.log(sum(mixedArr));
 
 
 
