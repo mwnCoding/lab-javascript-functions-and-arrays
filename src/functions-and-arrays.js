@@ -90,8 +90,7 @@ const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 function averageNumbers(arrayOfNumbers) {
   const sum = sumNumbers(arrayOfNumbers);
   let result = null;
-
-  if (sum != null) {
+  if (arrayOfNumbers.length !== 0) {
     result = sum  / arrayOfNumbers.length;
   }
   return result;
@@ -101,7 +100,16 @@ function averageNumbers(arrayOfNumbers) {
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(arrayOfStrings) {
+  let result = null;
+    if (arrayOfStrings.length > 0) {
+      let sumWords = sum(arrayOfStrings);
+      result = sumWords / arrayOfStrings.length;
+    }
+    return result
+ }
+
+ console.log(averageWordLength(wordsArr));
 
 // Bonus - Iteration #4.1
 function avg() {}
