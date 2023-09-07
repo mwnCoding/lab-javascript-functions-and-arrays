@@ -83,18 +83,19 @@ function sum(arrayOfGeneric) {
   return sum;
 }
 
-const mixedArr = [6, 12, 'miami', 1, true, 'barca', '200', 'lisboa', 8, 10];
-
-// should return: 57
-console.log(sum(mixedArr));
-
-
-
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(arrayOfNumbers) {
+  const sum = sumNumbers(arrayOfNumbers);
+  let result = null;
+
+  if (sum != null) {
+    result = sum  / arrayOfNumbers.length;
+  }
+  return result;
+}
 
 
 // Level 2: Array of strings
