@@ -219,7 +219,36 @@ const matrix = [
   [1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52, 1, 89, 19, 67, 48]
 ];
 
-function greatestProduct() {}
+function greatestProduct(matrixOfNumbers) {
+  let greatestProduct = 1;
+  for (let i = 0; i < matrixOfNumbers.length; i++) {
+    let rowProduct = 1;
+    let columnProduct = 1;
+    for (let j = 0; j < matrixOfNumbers.length; j++) {
+      rowProduct *= matrixOfNumbers[i][j];
+      columnProduct *= matrixOfNumbers[j][i];
+    }
+
+    if (rowProduct > greatestProduct) {
+      greatestProduct = rowProduct;
+    } 
+    else if (columnProduct > greatestProduct) {
+      greatestProduct = columnProduct;
+    }
+    
+  }
+  return greatestProduct;
+}
+
+function greatestRowProduct(matrixOfNumbers) {
+  for (i = 0; i < matrixOfNumbers.length; i++) {
+
+  }
+}
+
+console.log(greatestProduct(matrix));
+
+
 
 
 
