@@ -221,32 +221,33 @@ const matrix = [
 
 function greatestProduct(matrixOfNumbers) {
   let greatestProduct = 1;
-  for (let i = 0; i < matrixOfNumbers.length; i++) {
-    let rowProduct = 1;
-    let columnProduct = 1;
-    for (let j = 0; j < matrixOfNumbers.length; j++) {
-      rowProduct *= matrixOfNumbers[i][j];
-      columnProduct *= matrixOfNumbers[j][i];
-    }
+  let rowProduct = 0;
+  let columnProduct = 0;
 
-    if (rowProduct > greatestProduct) {
-      greatestProduct = rowProduct;
-    } 
-    else if (columnProduct > greatestProduct) {
-      greatestProduct = columnProduct;
+
+  for (let i = 0; i < matrixOfNumbers.length; i++) {
+    for (let j = 0; j < matrixOfNumbers.length - 3; j++) {
+      let row = matrixOfNumbers[i][j] * matrixOfNumbers[i][j + 1] * matrixOfNumbers[i][j + 2] * matrixOfNumbers[i][j + 3];
+      let col = matrixOfNumbers[j][i] * matrixOfNumbers[j + 1][i] * matrixOfNumbers[j + 2][i] * matrixOfNumbers[j + 3][i];
+
+      if (row > rowProduct) {
+        rowProduct = row;
+      }
+      if (col > columnProduct) {
+        columnProduct = col;
+      }
     }
-    
+  }
+  if (rowProduct > columnProduct) {
+    greatestProduct = rowProduct;
+  } 
+  else {
+    greatestProduct = columnProduct;
   }
   return greatestProduct;
 }
 
-function greatestRowProduct(matrixOfNumbers) {
-  for (i = 0; i < matrixOfNumbers.length; i++) {
 
-  }
-}
-
-console.log(greatestProduct(matrix));
 
 
 
